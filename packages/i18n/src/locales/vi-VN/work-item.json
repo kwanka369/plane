@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Sơ đồ tư duy (xem trước)",
+      "description": "Xem trước phân cấp ở chế độ chỉ đọc. Các quan hệ phụ thuộc không được hiển thị.",
+      "partial": "Chỉ hiển thị các mục công việc đã tải. Hãy tải thêm để hoàn thiện cây.",
+      "detached": "Mục cha không có trong lựa chọn này hoặc tạo thành chu trình. Nhánh này được hiển thị ở cấp dự án."
+    },
     "label": "{count, plural, one {mục công việc} other {mục công việc}}",
     "all": "Tất cả mục công việc",
     "edit": "Chỉnh sửa mục công việc",

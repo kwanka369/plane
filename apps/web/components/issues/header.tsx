@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 // icons
 import { Circle } from "lucide-react";
 // plane imports
@@ -32,10 +32,12 @@ import { usePlatformOS } from "@/hooks/use-platform-os";
 // plane web imports
 import { CommonProjectBreadcrumbs } from "@/components/breadcrumbs/common";
 import { useProjectCrumbProps } from "@/components/breadcrumbs/use-project-crumb-props";
+import { MINDMAP_QUERY_PARAM } from "./issue-layouts/mindmap/query";
 
 export const IssuesHeader = observer(function IssuesHeader() {
   // router
   const { workspaceSlug, projectId } = useParams();
+  const isMindmap = useSearchParams().get(MINDMAP_QUERY_PARAM) === "1";
   const projectCrumb = useProjectCrumbProps(workspaceSlug?.toString(), projectId?.toString());
   // store hooks
   const {
@@ -83,7 +85,7 @@ export const IssuesHeader = observer(function IssuesHeader() {
               isLast
             />
           </Breadcrumbs>
-          {issuesCount && issuesCount > 0 ? (
+          {!isMindmap && issuesCount && issuesCount > 0 ? (
             <Tooltip
               label={`There are ${issuesCount} ${issuesCount > 1 ? "work items" : "work item"} in this project`}
               layout="stacked"

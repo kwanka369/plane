@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Peta pikiran (pratinjau)",
+      "description": "Pratinjau hierarki hanya baca. Dependensi tidak ditampilkan.",
+      "partial": "Hanya item kerja yang dimuat yang ditampilkan. Muat lebih banyak untuk melengkapi pohon.",
+      "detached": "Item induk tidak tersedia dalam pilihan ini atau membentuk siklus. Cabang ini ditampilkan pada tingkat proyek."
+    },
     "label": "{count, plural, one {Item Kerja} other {Item Kerja}}",
     "all": "Semua Item Kerja",
     "edit": "Edit item kerja",

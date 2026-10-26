@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Carte mentale (aperçu)",
+      "description": "Aperçu de la hiérarchie en lecture seule. Les dépendances ne sont pas affichées.",
+      "partial": "Seuls les éléments de travail chargés sont affichés. Chargez-en davantage pour compléter l’arbre.",
+      "detached": "L’élément parent n’est pas disponible dans cette sélection ou forme un cycle. Cette branche est affichée au niveau du projet."
+    },
     "label": "{count, plural, one {Élément de travail} other {Éléments de travail}}",
     "all": "Tous les éléments de travail",
     "edit": "Modifier l’élément de travail",

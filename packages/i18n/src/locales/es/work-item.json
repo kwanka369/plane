@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Mapa mental (vista previa)",
+      "description": "Vista previa de la jerarquía de solo lectura. No se muestran las dependencias.",
+      "partial": "Solo se muestran los elementos de trabajo cargados. Cargue más para completar el árbol.",
+      "detached": "El elemento principal no está disponible en esta selección o forma un ciclo. Esta rama se muestra en el nivel del proyecto."
+    },
     "label": "{count, plural, one {Elemento de trabajo} other {Elementos de trabajo}}",
     "all": "Todos los elementos de trabajo",
     "edit": "Editar elemento de trabajo",

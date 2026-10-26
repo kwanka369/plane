@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Mapa mental (prévia)",
+      "description": "Prévia da hierarquia somente para leitura. As dependências não são exibidas.",
+      "partial": "Somente os itens de trabalho carregados são exibidos. Carregue mais para completar a árvore.",
+      "detached": "O item pai não está disponível nesta seleção ou forma um ciclo. Esta ramificação é exibida no nível do projeto."
+    },
     "label": "{count, plural, one {Item de trabalho} other {Itens de trabalho}}",
     "all": "Todos os Itens de trabalho",
     "edit": "Editar item de trabalho",

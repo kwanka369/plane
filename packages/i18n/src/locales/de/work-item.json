@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Mindmap (Vorschau)",
+      "description": "Schreibgeschützte Hierarchievorschau. Abhängigkeiten werden nicht angezeigt.",
+      "partial": "Nur geladene Arbeitselemente werden angezeigt. Weitere laden, um den Baum zu vervollständigen.",
+      "detached": "Das übergeordnete Element ist in dieser Auswahl nicht verfügbar oder bildet einen Zyklus. Dieser Zweig wird auf Projektebene angezeigt."
+    },
     "label": "{count, plural, one {Arbeitselement} few {Arbeitselemente} other {Arbeitselemente}}",
     "all": "Alle Arbeitselemente",
     "edit": "Arbeitselement bearbeiten",

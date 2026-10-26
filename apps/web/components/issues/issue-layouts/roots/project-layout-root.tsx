@@ -5,7 +5,7 @@
  */
 
 import { observer } from "mobx-react";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import useSWR from "swr";
 // plane constants
 import { ISSUE_DISPLAY_FILTERS_BY_PAGE } from "@plane/constants";
@@ -23,6 +23,8 @@ import { CalendarLayout } from "../calendar/roots/project-root";
 import { BaseGanttRoot } from "../gantt";
 import { KanBanLayout } from "../kanban/roots/project-root";
 import { ListLayout } from "../list/roots/project-root";
+import { ProjectMindmapRoot } from "../mindmap/project-root";
+import { MINDMAP_QUERY_PARAM } from "../mindmap/query";
 import { ProjectSpreadsheetLayout } from "../spreadsheet/roots/project-root";
 
 function ProjectIssueLayout(props: { activeLayout: EIssueLayoutTypes | undefined }) {
@@ -52,6 +54,8 @@ export const ProjectLayoutRoot = observer(function ProjectLayoutRoot() {
   // derived values
   const workItemFilters = projectId ? issuesFilter?.getIssueFilters(projectId) : undefined;
   const activeLayout = workItemFilters?.displayFilters?.layout;
+  const searchParams = useSearchParams();
+  const isMindmap = searchParams.get(MINDMAP_QUERY_PARAM) === "1";
 
   useSWR(
     workspaceSlug && projectId ? `PROJECT_ISSUES_${workspaceSlug}_${projectId}` : null,
@@ -67,7 +71,7 @@ export const ProjectLayoutRoot = observer(function ProjectLayoutRoot() {
   return (
     <IssuesStoreContext.Provider value={EIssuesStoreType.PROJECT}>
       <ProjectLevelWorkItemFiltersHOC
-        enableSaveView
+        enableSaveView={!isMindmap}
         entityType={EIssuesStoreType.PROJECT}
         entityId={projectId}
         filtersToShowByLayout={ISSUE_DISPLAY_FILTERS_BY_PAGE.issues.filters}
@@ -86,7 +90,15 @@ export const ProjectLayoutRoot = observer(function ProjectLayoutRoot() {
                   <Spinner className="h-4 w-4" />
                 </div>
               )}
-              <ProjectIssueLayout activeLayout={activeLayout} />
+              {isMindmap ? (
+                <ProjectMindmapRoot
+                  key={`${workspaceSlug}:${projectId}`}
+                  workspaceSlug={workspaceSlug}
+                  projectId={projectId}
+                />
+              ) : (
+                <ProjectIssueLayout activeLayout={activeLayout} />
+              )}
             </div>
             {/* peek overview */}
             <IssuePeekOverview />

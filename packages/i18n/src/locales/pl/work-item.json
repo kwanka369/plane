@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Mapa myśli (podgląd)",
+      "description": "Podgląd hierarchii tylko do odczytu. Zależności nie są wyświetlane.",
+      "partial": "Wyświetlane są tylko wczytane elementy pracy. Aby uzupełnić drzewo, należy wczytać więcej.",
+      "detached": "Element nadrzędny jest niedostępny w tym wyborze lub tworzy cykl. Ta gałąź jest wyświetlana na poziomie projektu."
+    },
     "label": "{count, plural, one {Element pracy} few {Elementy pracy} other {Elementów pracy}}",
     "all": "Wszystkie elementy pracy",
     "edit": "Edytuj element pracy",

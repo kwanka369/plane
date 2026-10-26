@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Zihin haritası (önizleme)",
+      "description": "Salt okunur hiyerarşi önizlemesi. Bağımlılıklar gösterilmez.",
+      "partial": "Yalnızca yüklenen iş öğeleri gösterilir. Ağacı tamamlamak için daha fazlasını yükleyin.",
+      "detached": "Üst öğe bu seçimde kullanılamıyor veya bir döngü oluşturuyor. Bu dal proje düzeyinde gösterilir."
+    },
     "label": "{count, plural, one {İş öğesi} other {İş öğeleri}}",
     "all": "Tüm İş Öğeleri",
     "edit": "İş öğesini düzenle",

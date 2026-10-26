@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Mindmap (voorbeeld)",
+      "description": "Alleen-lezen voorbeeld van de hiërarchie. Afhankelijkheden worden niet weergegeven.",
+      "partial": "Alleen geladen werkitems worden weergegeven. Laad meer om de boom te voltooien.",
+      "detached": "Het bovenliggende item is niet beschikbaar in deze selectie of vormt een cyclus. Deze tak wordt op projectniveau weergegeven."
+    },
     "label": "{count, plural, one {Werkitem} other {Werkitems}}",
     "all": "Alle werkitems",
     "edit": "Werkitem bewerken",

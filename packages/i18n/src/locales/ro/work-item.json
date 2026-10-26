@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Hartă mentală (previzualizare)",
+      "description": "Previzualizare a ierarhiei doar pentru citire. Dependențele nu sunt afișate.",
+      "partial": "Sunt afișate doar elementele de lucru încărcate. Încărcați mai multe pentru a completa arborele.",
+      "detached": "Elementul părinte nu este disponibil în această selecție sau formează un ciclu. Această ramură este afișată la nivel de proiect."
+    },
     "label": "{count, plural, one {Activitate} other {Activități}}",
     "all": "Toate activitățile",
     "edit": "Editează activitatea",

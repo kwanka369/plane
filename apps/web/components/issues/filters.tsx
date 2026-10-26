@@ -15,6 +15,7 @@ import type { IIssueDisplayFilterOptions, IIssueDisplayProperties } from "@plane
 import { EIssueLayoutTypes, EIssuesStoreType } from "@plane/types";
 // hooks
 import { useIssues } from "@/hooks/store/use-issues";
+import { MindmapToggle, useMindmapSelection } from "./issue-layouts/mindmap/selection";
 // plane web imports
 import type { TProject } from "@plane/types";
 // local imports
@@ -52,6 +53,7 @@ export const HeaderFilters = observer(function HeaderFilters(props: Props) {
   } = props;
   // i18n
   const { t } = useTranslation();
+  const { isMindmap, setMindmap } = useMindmapSelection(storeType === EIssuesStoreType.PROJECT);
   // states
   const [analyticsModal, setAnalyticsModal] = useState(false);
   // store hooks
@@ -65,9 +67,10 @@ export const HeaderFilters = observer(function HeaderFilters(props: Props) {
   const handleLayoutChange = useCallback(
     (layout: EIssueLayoutTypes) => {
       if (!workspaceSlug || !projectId) return;
+      if (isMindmap) setMindmap(false);
       updateFilters(workspaceSlug, projectId, EIssueFilterType.DISPLAY_FILTERS, { layout: layout });
     },
-    [workspaceSlug, projectId, updateFilters]
+    [workspaceSlug, projectId, updateFilters, isMindmap, setMindmap]
   );
 
   const handleDisplayFilters = useCallback(
@@ -98,33 +101,36 @@ export const HeaderFilters = observer(function HeaderFilters(props: Props) {
         <LayoutSelection
           layouts={LAYOUTS}
           onChange={(layout) => handleLayoutChange(layout)}
-          selectedLayout={activeLayout}
+          selectedLayout={isMindmap ? undefined : activeLayout}
         />
       </div>
       <div className="flex @4xl:hidden">
         <MobileLayoutSelection
           layouts={LAYOUTS}
           onChange={(layout) => handleLayoutChange(layout)}
-          activeLayout={activeLayout}
+          activeLayout={isMindmap ? undefined : activeLayout}
         />
       </div>
+      {storeType === EIssuesStoreType.PROJECT && <MindmapToggle />}
       <WorkItemFiltersToggle entityType={storeType} entityId={projectId} />
-      <FiltersDropdown
-        miniIcon={<PreferencesOutline className="size-3.5" />}
-        title={t("common.display")}
-        placement="bottom-end"
-      >
-        <DisplayFiltersSelection
-          layoutDisplayFiltersOptions={layoutDisplayFiltersOptions}
-          displayFilters={issueFilters?.displayFilters ?? {}}
-          handleDisplayFiltersUpdate={handleDisplayFilters}
-          displayProperties={issueFilters?.displayProperties ?? {}}
-          handleDisplayPropertiesUpdate={handleDisplayProperties}
-          cycleViewDisabled={!currentProjectDetails?.cycle_view}
-          moduleViewDisabled={!currentProjectDetails?.module_view}
-          isEpic={storeType === EIssuesStoreType.EPIC}
-        />
-      </FiltersDropdown>
+      {!isMindmap && (
+        <FiltersDropdown
+          miniIcon={<PreferencesOutline className="size-3.5" />}
+          title={t("common.display")}
+          placement="bottom-end"
+        >
+          <DisplayFiltersSelection
+            layoutDisplayFiltersOptions={layoutDisplayFiltersOptions}
+            displayFilters={issueFilters?.displayFilters ?? {}}
+            handleDisplayFiltersUpdate={handleDisplayFilters}
+            displayProperties={issueFilters?.displayProperties ?? {}}
+            handleDisplayPropertiesUpdate={handleDisplayProperties}
+            cycleViewDisabled={!currentProjectDetails?.cycle_view}
+            moduleViewDisabled={!currentProjectDetails?.module_view}
+            isEpic={storeType === EIssuesStoreType.EPIC}
+          />
+        </FiltersDropdown>
+      )}
       {canUserCreateIssue ? (
         <div className="hidden md:flex">
           <Button

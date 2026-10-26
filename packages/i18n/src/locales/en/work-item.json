@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Mind map (preview)",
+      "description": "Read-only hierarchy preview. Dependencies are not shown.",
+      "partial": "Only loaded work items are shown. Load more to complete the tree.",
+      "detached": "The parent is unavailable in this selection or forms a cycle. This branch is shown at project level."
+    },
     "label": "{count, plural, one {Work item} other {Work items}}",
     "all": "All Work items",
     "edit": "Edit work item",

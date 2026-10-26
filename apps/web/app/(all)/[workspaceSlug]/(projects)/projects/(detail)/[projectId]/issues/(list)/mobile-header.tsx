@@ -23,6 +23,7 @@ import {
 // hooks
 import { useIssues } from "@/hooks/store/use-issues";
 import { useProject } from "@/hooks/store/use-project";
+import { MindmapToggle, useMindmapSelection } from "@/components/issues/issue-layouts/mindmap/selection";
 
 export const ProjectIssuesMobileHeader = observer(function ProjectIssuesMobileHeader() {
   // i18n
@@ -30,6 +31,7 @@ export const ProjectIssuesMobileHeader = observer(function ProjectIssuesMobileHe
   const [analyticsModal, setAnalyticsModal] = useState(false);
   const { workspaceSlug, projectId } = useParams();
   const { currentProjectDetails } = useProject();
+  const { isMindmap, setMindmap } = useMindmapSelection();
 
   // store hooks
   const {
@@ -40,9 +42,10 @@ export const ProjectIssuesMobileHeader = observer(function ProjectIssuesMobileHe
   const handleLayoutChange = useCallback(
     (layout: EIssueLayoutTypes) => {
       if (!workspaceSlug || !projectId) return;
+      if (isMindmap) setMindmap(false);
       updateFilters(workspaceSlug, projectId, EIssueFilterType.DISPLAY_FILTERS, { layout: layout });
     },
-    [workspaceSlug, projectId, updateFilters]
+    [workspaceSlug, projectId, updateFilters, isMindmap, setMindmap]
   );
 
   const handleDisplayFilters = useCallback(
@@ -72,31 +75,35 @@ export const ProjectIssuesMobileHeader = observer(function ProjectIssuesMobileHe
         <MobileLayoutSelection
           layouts={[EIssueLayoutTypes.LIST, EIssueLayoutTypes.KANBAN, EIssueLayoutTypes.CALENDAR]}
           onChange={handleLayoutChange}
+          activeLayout={isMindmap ? undefined : activeLayout}
         />
-        <div className="flex flex-grow items-center justify-center border-l border-subtle text-13 text-secondary">
-          <FiltersDropdown
-            title={t("common.display")}
-            placement="bottom-end"
-            menuButton={
-              <span className="flex items-center text-13 text-secondary">
-                {t("common.display")}
-                <ChevronDownOutline className="ml-2 h-4 w-4 text-secondary" />
-              </span>
-            }
-          >
-            <DisplayFiltersSelection
-              layoutDisplayFiltersOptions={
-                activeLayout ? ISSUE_DISPLAY_FILTERS_BY_PAGE.issues.layoutOptions[activeLayout] : undefined
+        <MindmapToggle />
+        {!isMindmap && (
+          <div className="flex flex-grow items-center justify-center border-l border-subtle text-13 text-secondary">
+            <FiltersDropdown
+              title={t("common.display")}
+              placement="bottom-end"
+              menuButton={
+                <span className="flex items-center text-13 text-secondary">
+                  {t("common.display")}
+                  <ChevronDownOutline className="ml-2 h-4 w-4 text-secondary" />
+                </span>
               }
-              displayFilters={issueFilters?.displayFilters ?? {}}
-              handleDisplayFiltersUpdate={handleDisplayFilters}
-              displayProperties={issueFilters?.displayProperties ?? {}}
-              handleDisplayPropertiesUpdate={handleDisplayProperties}
-              cycleViewDisabled={!currentProjectDetails?.cycle_view}
-              moduleViewDisabled={!currentProjectDetails?.module_view}
-            />
-          </FiltersDropdown>
-        </div>
+            >
+              <DisplayFiltersSelection
+                layoutDisplayFiltersOptions={
+                  activeLayout ? ISSUE_DISPLAY_FILTERS_BY_PAGE.issues.layoutOptions[activeLayout] : undefined
+                }
+                displayFilters={issueFilters?.displayFilters ?? {}}
+                handleDisplayFiltersUpdate={handleDisplayFilters}
+                displayProperties={issueFilters?.displayProperties ?? {}}
+                handleDisplayPropertiesUpdate={handleDisplayProperties}
+                cycleViewDisabled={!currentProjectDetails?.cycle_view}
+                moduleViewDisabled={!currentProjectDetails?.module_view}
+              />
+            </FiltersDropdown>
+          </div>
+        )}
 
         <button
           onClick={() => setAnalyticsModal(true)}

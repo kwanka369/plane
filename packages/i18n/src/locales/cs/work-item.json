@@ -1,5 +1,11 @@
 {
   "issue": {
+    "mindmap": {
+      "label": "Myšlenková mapa (náhled)",
+      "description": "Náhled hierarchie pouze pro čtení. Závislosti se nezobrazují.",
+      "partial": "Zobrazují se pouze načtené pracovní položky. Pro doplnění stromu načtěte další.",
+      "detached": "Nadřazená položka není v tomto výběru dostupná nebo tvoří cyklus. Tato větev se zobrazuje na úrovni projektu."
+    },
     "label": "{count, plural, one {Pracovní položka} few {Pracovní položky} other {Pracovních položek}}",
     "all": "Všechny pracovní položky",
     "edit": "Upravit pracovní položku",
