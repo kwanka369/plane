@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Inzoomen",
+      "zoom_out": "Uitzoomen",
+      "fit": "Alles passend maken",
+      "progress": "{done} / {total} voltooid",
+      "progress_detail": "{remaining} resterend · {cancelled} geannuleerd · {unknown} onbekend",
+      "loaded_only": "Alleen de geladen selectie",
+      "parent_link": "Bovenliggend item in een andere module: {identifier}",
       "label": "Mindmap (voorbeeld)",
       "description": "Alleen-lezen voorbeeld van de hiërarchie. Afhankelijkheden worden niet weergegeven.",
       "partial": "Alleen geladen werkitems worden weergegeven. Laad meer om de boom te voltooien.",

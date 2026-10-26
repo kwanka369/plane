@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Vergrößern",
+      "zoom_out": "Verkleinern",
+      "fit": "Alles einpassen",
+      "progress": "{done} / {total} erledigt",
+      "progress_detail": "{remaining} verbleibend · {cancelled} abgebrochen · {unknown} unbekannt",
+      "loaded_only": "Nur die geladene Auswahl",
+      "parent_link": "Übergeordneter Eintrag in einem anderen Modul: {identifier}",
       "label": "Mindmap (Vorschau)",
       "description": "Schreibgeschützte Hierarchievorschau. Abhängigkeiten werden nicht angezeigt.",
       "partial": "Nur geladene Arbeitselemente werden angezeigt. Weitere laden, um den Baum zu vervollständigen.",

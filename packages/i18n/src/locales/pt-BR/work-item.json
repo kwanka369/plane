@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Ampliar",
+      "zoom_out": "Reduzir",
+      "fit": "Ajustar tudo",
+      "progress": "{done} / {total} concluídos",
+      "progress_detail": "{remaining} restantes · {cancelled} cancelados · {unknown} desconhecidos",
+      "loaded_only": "Somente a seleção carregada",
+      "parent_link": "Item pai em outro módulo: {identifier}",
       "label": "Mapa mental (prévia)",
       "description": "Prévia da hierarquia somente para leitura. As dependências não são exibidas.",
       "partial": "Somente os itens de trabalho carregados são exibidos. Carregue mais para completar a árvore.",

@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Perbesar",
+      "zoom_out": "Perkecil",
+      "fit": "Sesuaikan semua",
+      "progress": "{done} / {total} selesai",
+      "progress_detail": "{remaining} tersisa · {cancelled} dibatalkan · {unknown} tidak diketahui",
+      "loaded_only": "Hanya pilihan yang dimuat",
+      "parent_link": "Induk di modul lain: {identifier}",
       "label": "Peta pikiran (pratinjau)",
       "description": "Pratinjau hierarki hanya baca. Dependensi tidak ditampilkan.",
       "partial": "Hanya item kerja yang dimuat yang ditampilkan. Muat lebih banyak untuk melengkapi pohon.",

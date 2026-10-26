@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Acercar",
+      "zoom_out": "Alejar",
+      "fit": "Ajustar todo",
+      "progress": "{done} / {total} completados",
+      "progress_detail": "{remaining} pendientes · {cancelled} cancelados · {unknown} desconocidos",
+      "loaded_only": "Solo la selección cargada",
+      "parent_link": "Elemento principal en otro módulo: {identifier}",
       "label": "Mapa mental (vista previa)",
       "description": "Vista previa de la jerarquía de solo lectura. No se muestran las dependencias.",
       "partial": "Solo se muestran los elementos de trabajo cargados. Cargue más para completar el árbol.",

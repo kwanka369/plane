@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "放大",
+      "zoom_out": "縮小",
+      "fit": "顯示全部",
+      "progress": "{done} / {total} 已完成",
+      "progress_detail": "剩餘 {remaining} · 已取消 {cancelled} · 未知 {unknown}",
+      "loaded_only": "僅限已載入的選取範圍",
+      "parent_link": "其他模組中的父工作項：{identifier}",
       "label": "心智圖（預覽）",
       "description": "唯讀階層預覽。不顯示相依關係。",
       "partial": "僅顯示已載入的工作項目。請載入更多以補全樹狀結構。",

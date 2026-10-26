@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Přiblížit",
+      "zoom_out": "Oddálit",
+      "fit": "Zobrazit vše",
+      "progress": "{done} / {total} dokončeno",
+      "progress_detail": "{remaining} zbývá · {cancelled} zrušeno · {unknown} neznámé",
+      "loaded_only": "Pouze načtený výběr",
+      "parent_link": "Nadřazená položka v jiném modulu: {identifier}",
       "label": "Myšlenková mapa (náhled)",
       "description": "Náhled hierarchie pouze pro čtení. Závislosti se nezobrazují.",
       "partial": "Zobrazují se pouze načtené pracovní položky. Pro doplnění stromu načtěte další.",

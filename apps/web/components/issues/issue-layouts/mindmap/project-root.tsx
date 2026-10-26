@@ -15,6 +15,8 @@ import type { TIssuesResponse } from "@plane/types";
 import { useIssues } from "@/hooks/store/use-issues";
 import { useProject } from "@/hooks/store/use-project";
 import { useProjectState } from "@/hooks/store/use-project-state";
+import { useModule } from "@/hooks/store/use-module";
+import { useLabel } from "@/hooks/store/use-label";
 import useIssuePeekOverviewRedirection from "@/hooks/use-issue-peek-overview-redirection";
 import { usePlatformOS } from "@/hooks/use-platform-os";
 import { StoreContext } from "@/lib/store-context";
@@ -38,6 +40,8 @@ export const ProjectMindmapRoot = observer(function ProjectMindmapRoot({
   const { issuesFilter } = useIssues(EIssuesStoreType.PROJECT);
   const { getProjectById } = useProject();
   const { getStateById } = useProjectState();
+  const { getModuleById, getProjectModuleDetails } = useModule();
+  const { getLabelById } = useLabel();
   const { handleRedirection } = useIssuePeekOverviewRedirection();
   const { isMobile } = usePlatformOS();
   const project = getProjectById(projectId);
@@ -74,6 +78,17 @@ export const ProjectMindmapRoot = observer(function ProjectMindmapRoot({
         identifier: `${project?.identifier ?? ""}-${issue.sequence_id}`,
         stateName: state?.name,
         stateColor: state?.color,
+        stateGroup: state?.group,
+        module_ids: issue.module_ids,
+        modules: (issue.module_ids ?? []).map((moduleId) => ({
+          id: moduleId,
+          name: getModuleById(moduleId)?.name ?? moduleId,
+        })),
+        labels: (issue.label_ids ?? []).map((labelId) => ({
+          id: labelId,
+          name: getLabelById(labelId)?.name ?? labelId,
+          color: getLabelById(labelId)?.color,
+        })),
       },
     ];
   });
@@ -116,7 +131,10 @@ export const ProjectMindmapRoot = observer(function ProjectMindmapRoot({
           )}
           {cards.length === 0 && <p className="p-3 text-13 text-secondary">{t("no_matching_results")}</p>}
           <MindmapCanvas
+            key={projectId}
             cards={cards}
+            modules={(getProjectModuleDetails(projectId) ?? []).map((module) => ({ id: module.id, name: module.name }))}
+            isPartial={hasMore || !!error}
             projectName={project?.name ?? ""}
             label={t("issue.mindmap.label")}
             detachedLabel={t("issue.mindmap.detached")}

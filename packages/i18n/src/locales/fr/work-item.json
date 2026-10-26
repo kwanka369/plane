@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Agrandir",
+      "zoom_out": "Réduire",
+      "fit": "Tout ajuster",
+      "progress": "{done} / {total} terminés",
+      "progress_detail": "{remaining} restants · {cancelled} annulés · {unknown} inconnus",
+      "loaded_only": "Sélection chargée uniquement",
+      "parent_link": "Parent dans un autre module : {identifier}",
       "label": "Carte mentale (aperçu)",
       "description": "Aperçu de la hiérarchie en lecture seule. Les dépendances ne sont pas affichées.",
       "partial": "Seuls les éléments de travail chargés sont affichés. Chargez-en davantage pour compléter l’arbre.",

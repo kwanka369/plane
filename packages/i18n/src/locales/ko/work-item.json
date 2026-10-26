@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "확대",
+      "zoom_out": "축소",
+      "fit": "전체 보기",
+      "progress": "{done} / {total} 완료",
+      "progress_detail": "남음 {remaining} · 취소 {cancelled} · 알 수 없음 {unknown}",
+      "loaded_only": "불러온 선택 항목만",
+      "parent_link": "다른 모듈의 상위 항목: {identifier}",
       "label": "마인드맵(미리 보기)",
       "description": "읽기 전용 계층 미리 보기입니다. 종속 관계는 표시되지 않습니다.",
       "partial": "불러온 작업 항목만 표시됩니다. 트리를 완성하려면 더 불러오세요.",

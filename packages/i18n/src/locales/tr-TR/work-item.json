@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Yakınlaştır",
+      "zoom_out": "Uzaklaştır",
+      "fit": "Tümünü sığdır",
+      "progress": "{done} / {total} tamamlandı",
+      "progress_detail": "{remaining} kalan · {cancelled} iptal · {unknown} bilinmeyen",
+      "loaded_only": "Yalnızca yüklenen seçim",
+      "parent_link": "Başka modüldeki üst öğe: {identifier}",
       "label": "Zihin haritası (önizleme)",
       "description": "Salt okunur hiyerarşi önizlemesi. Bağımlılıklar gösterilmez.",
       "partial": "Yalnızca yüklenen iş öğeleri gösterilir. Ağacı tamamlamak için daha fazlasını yükleyin.",

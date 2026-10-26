@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Priblížiť",
+      "zoom_out": "Oddialiť",
+      "fit": "Zobraziť všetko",
+      "progress": "{done} / {total} dokončené",
+      "progress_detail": "{remaining} zostáva · {cancelled} zrušené · {unknown} neznáme",
+      "loaded_only": "Iba načítaný výber",
+      "parent_link": "Nadradená položka v inom module: {identifier}",
       "label": "Myšlienková mapa (náhľad)",
       "description": "Náhľad hierarchie iba na čítanie. Závislosti sa nezobrazujú.",
       "partial": "Zobrazujú sa iba načítané pracovné položky. Na doplnenie stromu načítajte ďalšie.",

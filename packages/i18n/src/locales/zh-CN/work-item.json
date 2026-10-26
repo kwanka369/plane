@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "放大",
+      "zoom_out": "缩小",
+      "fit": "显示全部",
+      "progress": "{done} / {total} 已完成",
+      "progress_detail": "剩余 {remaining} · 已取消 {cancelled} · 未知 {unknown}",
+      "loaded_only": "仅限已加载的选择范围",
+      "parent_link": "其他模块中的父工作项：{identifier}",
       "label": "思维导图（预览）",
       "description": "只读层级预览。不显示依赖关系。",
       "partial": "仅显示已加载的工作项。请加载更多以补全树状结构。",

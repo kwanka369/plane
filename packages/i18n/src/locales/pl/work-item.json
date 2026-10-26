@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Przybliż",
+      "zoom_out": "Oddal",
+      "fit": "Dopasuj wszystko",
+      "progress": "{done} / {total} ukończono",
+      "progress_detail": "{remaining} pozostało · {cancelled} anulowano · {unknown} nieznane",
+      "loaded_only": "Tylko wczytany wybór",
+      "parent_link": "Element nadrzędny w innym module: {identifier}",
       "label": "Mapa myśli (podgląd)",
       "description": "Podgląd hierarchii tylko do odczytu. Zależności nie są wyświetlane.",
       "partial": "Wyświetlane są tylko wczytane elementy pracy. Aby uzupełnić drzewo, należy wczytać więcej.",

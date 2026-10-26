@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Phóng to",
+      "zoom_out": "Thu nhỏ",
+      "fit": "Vừa toàn bộ",
+      "progress": "{done} / {total} đã hoàn thành",
+      "progress_detail": "{remaining} còn lại · {cancelled} đã hủy · {unknown} chưa xác định",
+      "loaded_only": "Chỉ phần lựa chọn đã tải",
+      "parent_link": "Mục cha trong mô-đun khác: {identifier}",
       "label": "Sơ đồ tư duy (xem trước)",
       "description": "Xem trước phân cấp ở chế độ chỉ đọc. Các quan hệ phụ thuộc không được hiển thị.",
       "partial": "Chỉ hiển thị các mục công việc đã tải. Hãy tải thêm để hoàn thiện cây.",

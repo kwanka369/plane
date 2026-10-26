@@ -1,6 +1,13 @@
 {
   "issue": {
     "mindmap": {
+      "zoom_in": "Zoom in",
+      "zoom_out": "Zoom out",
+      "fit": "Fit all",
+      "progress": "{done} / {total} done",
+      "progress_detail": "{remaining} remaining · {cancelled} cancelled · {unknown} unknown",
+      "loaded_only": "Loaded selection only",
+      "parent_link": "Parent in another module: {identifier}",
       "label": "Mind map (preview)",
       "description": "Read-only hierarchy preview. Dependencies are not shown.",
       "partial": "Only loaded work items are shown. Load more to complete the tree.",
